@@ -1,5 +1,4 @@
 import { Worker } from 'worker_threads';
-import os from 'os';
 
 let readsCnt = 0;
 let requestsCnt = 0;
@@ -11,7 +10,7 @@ async function main() {
       console.log(`[${timestamp}] requests: ${requestsCnt}, reads: ${readsCnt}`);
     }, 10 * 1000);
 
-    const workersAmount = os.cpus().length;
+    const workersAmount = 2;
     console.log(`👷 Spawning ${workersAmount} workers...`);
     for (let i = 0; i < workersAmount; i++) {
       const worker = new Worker('./worker.js');
