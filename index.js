@@ -8,10 +8,10 @@ async function main() {
     setInterval(() => {
       const timestamp = new Date().toLocaleString();
       console.log(`[${timestamp}] requests: ${requestsCnt}, reads: ${readsCnt}`);
-    }, 10 * 1000);
+    }, 60 * 1000);
 
-    const workersAmount = 2;
-    console.log(`👷 Spawning ${workersAmount} workers...`);
+    const workersAmount = 1;
+    console.log(`👷 Spawning ${workersAmount} worker/s...`);
     for (let i = 0; i < workersAmount; i++) {
       const worker = new Worker('./worker.js');
       worker.on('message', (message) => {
