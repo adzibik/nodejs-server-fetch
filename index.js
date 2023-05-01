@@ -9,7 +9,7 @@ async function main() {
     setInterval(() => {
       const timestamp = new Date().toLocaleString();
       console.log(`[${timestamp}] requests: ${requestsCnt}, reads: ${readsCnt}`);
-    }, 60 * 1000);
+    }, 10 * 1000);
 
     const workersAmount = os.cpus().length;
     console.log(`👷 Spawning ${workersAmount} worker/s...`);
